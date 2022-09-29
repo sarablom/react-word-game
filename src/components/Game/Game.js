@@ -22,7 +22,7 @@ function Game() {
     return (
         <>
             Put a game here!
-            <UserGuesses userGuesses={userGuesses} />
+            <UserGuesses userGuesses={userGuesses} answer={answer} />
             <InputField handleGuessesUpdate={handleGuessesUpdate} />
         </>
     );
