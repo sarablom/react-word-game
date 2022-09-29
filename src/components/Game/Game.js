@@ -3,6 +3,7 @@ import { sample } from "../../utils";
 import { WORDS } from "../../data";
 import InputField from "../InputField/InputField";
 import UserGuesses from "../UserGuesses/UserGuesses";
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -10,11 +11,13 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [userGuesses, setUserGuesses] = useState([]);
+    const [userGuesses, setUserGuesses] = useState([]);
 
-  const handleGuessesUpdate = (userInput) => {
-    setUserGuesses([userInput, ...userGuesses]);
-  }
+    const handleGuessesUpdate = userInput => {
+        if (userGuesses.length < NUM_OF_GUESSES_ALLOWED) {
+            setUserGuesses([userInput, ...userGuesses]);
+        }
+    };
 
     return (
         <>
