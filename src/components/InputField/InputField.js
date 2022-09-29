@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-function InputField() {
+function InputField({ handleGuessesUpdate }) {
     const [userInput, setUserInput] = useState("");
 
     const onSubmitHandler = event => {
         event.preventDefault();
-        console.log(userInput);
+        handleGuessesUpdate(userInput);
         setUserInput("");
     };
     return (
