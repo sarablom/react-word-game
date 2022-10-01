@@ -38,8 +38,8 @@ function Game() {
 
     return (
         <>
-            {gameStatus.won && <HappyBanner />}
-            {gameStatus.lost && <SadBanner />}
+            {gameStatus.won && <HappyBanner userGuesses={userGuesses} />}
+            {gameStatus.lost && <SadBanner answer={answer} />}
             <UserGuesses userGuesses={userGuesses} answer={answer} />
             <InputField
                 handleGuessesUpdate={handleGuessesUpdate}
