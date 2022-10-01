@@ -25,7 +25,7 @@ function Game() {
         if (correctGuess)
             setGameStatus({ running: false, won: true, lost: false });
 
-        if (userGuesses.length === 6 && !correctGuess)
+        if (userGuesses.length === NUM_OF_GUESSES_ALLOWED && !correctGuess)
             setGameStatus({ running: false, won: false, lost: true });
     }, [userGuesses]);
 
